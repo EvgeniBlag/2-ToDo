@@ -27,7 +27,6 @@
 .App .item-todo .item-delete {
   display: inline-block;
   cursor:pointer;
-  float: right;
   font-size: 22px;
   position: relative;
   left: -4px;
@@ -37,4 +36,17 @@
 .strike {
   text-decoration: line-through;
 }
-
+.list{
+  color: rgb(14, 13, 121);
+}
+.inp{
+  background-color: aqua;
+  padding: 12px;
+}
+.btn{
+  background-color: red;
+  padding: 12px;
+}
+.body{
+  background-color: blueviolet;
+}

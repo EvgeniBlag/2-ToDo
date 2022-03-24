@@ -1,10 +1,50 @@
-
+import {useState} from 'react'
+import ToDo from './ToDo'
+import ToDoForm from './ToDoForm'
 
 
 function App() {
+
+  const [todos,setTodos] = useState([]);
+
+  const addTask = (userInput) => { //добавленние задач
+       if(userInput) {
+         const newItem = {
+           id: Math.random().toString(36),
+           task: userInput,
+           complete: false
+         }
+         setTodos([...todos,newItem])
+       }
+  }
+
+  const removeTask = () => { //удаление задач
+
+  }
+
+  const handleToggle = () => { //?
+
+  }
+
+
+
   return (
     <div className="App">
-  
+      <header>
+        <h1 className='list'>Lista de tarreas: {todos.length}</h1>
+      </header>
+        <ToDoForm addTask={addTask}/>
+        {todos.map((todo)=> {
+          return (
+           <ToDo
+             todo={todo}
+             key={todo.id}
+             toggleTask={handleToggle}
+             removeTask={removeTask}
+             />
+          )
+        })}
+      
     </div>
   );
 }
